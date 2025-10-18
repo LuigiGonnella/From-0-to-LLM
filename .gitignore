@@ -1,9 +1,9 @@
 *.docx
 # Ignora cartelle di training
-*.results/
-*.logs/
-*.checkpoints/
-*.checkpoint-*/
+.results/
+.logs/
+.checkpoints/
+.checkpoint-*/
 
 # Ignora file di modelli PyTorch
 *.pt
@@ -14,3 +14,6 @@
 # Ignora cache HuggingFace
 *.cache/
 wandb/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/

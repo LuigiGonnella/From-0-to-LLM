@@ -22,11 +22,6 @@ Top-level folders (partial view):
 - `ML/` - machine learning experiments.
 - `DL/` - deep learning experiments (CIFAR-10, Flowers, etc.).
 
-Important files and notebooks:
-
-- `DL/1) Training CIFAR10/CIFAR10_with_TransferLearning.ipynb` - transfer learning notebook for CIFAR-10.
-- `ML/1) Regression/Lab8_Scikit-Learn_Regression.ipynb` - regression lab with scikit-learn examples.
-
 The exact structure may evolve; inspect the repository tree for the most recent layout.
 
 ## Launching notebooks

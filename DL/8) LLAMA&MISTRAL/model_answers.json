@@ -1,0 +1,97 @@
+[
+  {
+    "question": "Please add 926 and 813.",
+    "num_1": 926,
+    "num_2": 813,
+    "model_answer": [
+      {
+        "role": "system",
+        "content": "Answer each question in JSON format with the fields 'num_1', 'num_2', and 'answer'. Provide only JSON to ensure compatibility with a JSON parser."
+      },
+      {
+        "role": "user",
+        "content": "Please add 926 and 813."
+      },
+      {
+        "role": "assistant",
+        "content": " {\n  \"num_1\": 926,\n  \"num_2\": 813,\n  \"answer\": 1739\n}"
+      }
+    ]
+  },
+  {
+    "question": "Can you add 380 and 454?",
+    "num_1": 380,
+    "num_2": 454,
+    "model_answer": [
+      {
+        "role": "system",
+        "content": "Answer each question in JSON format with the fields 'num_1', 'num_2', and 'answer'. Provide only JSON to ensure compatibility with a JSON parser."
+      },
+      {
+        "role": "user",
+        "content": "Can you add 380 and 454?"
+      },
+      {
+        "role": "assistant",
+        "content": " {\"num_1\": 380, \"num_2\": 454, \"answer\": 834}"
+      }
+    ]
+  },
+  {
+    "question": "Can you add 216 and 695?",
+    "num_1": 216,
+    "num_2": 695,
+    "model_answer": [
+      {
+        "role": "system",
+        "content": "Answer each question in JSON format with the fields 'num_1', 'num_2', and 'answer'. Provide only JSON to ensure compatibility with a JSON parser."
+      },
+      {
+        "role": "user",
+        "content": "Can you add 216 and 695?"
+      },
+      {
+        "role": "assistant",
+        "content": " {\n  \"num_1\": 216,\n  \"num_2\": 695,\n  \"answer\": 911\n}"
+      }
+    ]
+  },
+  {
+    "question": "Calculate the sum of 350 and 667 for me.",
+    "num_1": 350,
+    "num_2": 667,
+    "model_answer": [
+      {
+        "role": "system",
+        "content": "Answer each question in JSON format with the fields 'num_1', 'num_2', and 'answer'. Provide only JSON to ensure compatibility with a JSON parser."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the sum of 350 and 667 for me."
+      },
+      {
+        "role": "assistant",
+        "content": " {\n  \"num_1\": 350,\n  \"num_2\": 667,\n  \"answer\": 1017\n}"
+      }
+    ]
+  },
+  {
+    "question": "Can you add 451 and 671?",
+    "num_1": 451,
+    "num_2": 671,
+    "model_answer": [
+      {
+        "role": "system",
+        "content": "Answer each question in JSON format with the fields 'num_1', 'num_2', and 'answer'. Provide only JSON to ensure compatibility with a JSON parser."
+      },
+      {
+        "role": "user",
+        "content": "Can you add 451 and 671?"
+      },
+      {
+        "role": "assistant",
+        "content": " {\"num_1\": 451, \"num_2\": 671, \"answer\": 1122}"
+      }
+    ]
+  }
+]

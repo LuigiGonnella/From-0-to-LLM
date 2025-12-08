@@ -75,6 +75,88 @@ BERT (Bidirectional Encoder Representations from Transformers):
 - **HuggingFace Transformers**: Using `BertModel`, `BertForSequenceClassification`, `BertForMaskedLM`
 - **Training details**: Optimizer selection, learning rate scheduling, checkpointing
 
+#### **`7) GPT-2/`**
+GPT-2 (Generative Pre-trained Transformer 2):
+- **Architecture**: Decoder-only transformer for autoregressive text generation
+- **Causal language modeling**: Predicting next tokens in sequence
+- **Fine-tuning**: Domain-specific text generation, dialogue systems
+- **Generation strategies**: Greedy decoding, beam search, top-k/top-p sampling
+- **HuggingFace integration**: `GPT2LMHeadModel`, `GPT2Tokenizer`
+
+#### **`8) LLAMA&MISTRAL/`**
+Modern open-source large language models:
+- **LLAMA**: Meta's efficient LLM architecture (LLAMA 2, LLAMA 3)
+- **Mistral**: High-performance 7B parameter model with sliding window attention
+- **Model loading**: Handling large models with `device_map='auto'`, quantization
+- **Instruction tuning**: Using instruct variants for chat and task completion
+- **Inference optimization**: Memory management, batch processing
+
+#### **`9) CLM TASK/`**
+Causal Language Modeling tasks:
+- **Medical text generation**: Fine-tuning GPT-2 on medical datasets
+- **Domain adaptation**: Customizing LLMs for specific domains
+- **Evaluation metrics**: Perplexity, BLEU scores, human evaluation
+- **Training strategies**: Learning rate scheduling, gradient accumulation
+
+#### **`10) Quantization&LoRA/`**
+Model optimization and efficient fine-tuning:
+- **Quantization**: 8-bit and 4-bit quantization with `bitsandbytes`
+- **LoRA (Low-Rank Adaptation)**: Parameter-efficient fine-tuning
+- **QLoRA**: Combining quantization with LoRA for memory-efficient training
+- **PEFT library**: Practical implementation with HuggingFace PEFT
+- **Memory optimization**: Reducing VRAM usage while maintaining performance
+
+#### **`11) RAG_&_Prompt-Engineering/`**
+Retrieval-Augmented Generation and advanced prompting:
+- **RAG architecture**: Combining retrieval with generation
+- **Document embeddings**: BERT-based embeddings for semantic search
+- **Retrieval strategies**: Cosine similarity, top-k document selection
+- **Prompt engineering**: System prompts, few-shot learning, chain-of-thought
+- **Context management**: Handling long documents, truncation strategies
+
+#### **`12) RAG_&_User_Stories_Generation/`**
+Applying RAG to software engineering:
+- **User story generation**: Creating structured requirements from natural language
+- **Document retrieval**: Finding relevant examples and templates
+- **Structured output**: JSON formatting, consistent schema generation
+- **Use case**: Automated software requirement documentation
+
+#### **`13) Advanced_Architectures_for_Vision&Multimedia/`**
+Cutting-edge vision and multimodal models:
+- **Vision Transformers (ViT)**: Applying transformers to computer vision
+- **CLIP**: Contrastive language-image pre-training
+- **Multimodal architectures**: Combining vision and language understanding
+- **Advanced techniques**: Attention visualization, feature extraction
+
+#### **`14) Keyword Spotting/`**
+Audio processing with deep learning:
+- **Speech recognition**: Wake word detection, command recognition
+- **Audio preprocessing**: MFCC features, spectrograms
+- **CNN/RNN architectures**: Models for audio classification
+- **Real-time inference**: Optimizing for low-latency applications
+
+#### **`15) ROC-ROUTER Design/`**
+Model evaluation and routing strategies:
+- **ROC curve analysis**: TPR/FPR trade-offs, AUC computation
+- **Model routing**: Selecting appropriate models based on input characteristics
+- **Performance metrics**: Precision, recall, F1-score, confusion matrices
+- **Decision thresholds**: Optimizing classification cutoffs
+
+#### **`16) Agentic-Code-Generation/`**
+LLM-powered code generation and evaluation:
+- **Code generation**: Using CodeLlama, Qwen, GPT for Python code synthesis
+- **Automated testing**: Generating and running pytest test cases
+- **Code quality metrics**: Cyclomatic complexity, maintainability index, LOC
+- **Multi-model comparison**: Evaluating GPT vs CodeLlama vs Qwen
+- **Functional correctness**: Test-driven validation of generated code
+- **Radon analysis**: Static code analysis for quality assessment
+
+#### **`17) GANs/`**
+Generative Adversarial Networks:
+- **GAN architectures**: Generator and discriminator networks
+- **Training dynamics**: Adversarial training, mode collapse, stability
+- **Applications**: Image generation, style transfer, data augmentation
+
 ### `ML vs DL/`
 Comparative analysis between ML and DL approaches:
 - When to use classical ML vs deep learning
@@ -107,13 +189,26 @@ python -m venv venv
 source venv/bin/activate      # Linux/Mac
 ```
 
-3. Install dependencies (create a `requirements.txt` as needed):
+3. Install dependencies:
 ```powershell
+# Core deep learning
 pip install torch torchvision torchaudio
+
+# NLP and LLMs
 pip install transformers datasets
+pip install peft bitsandbytes accelerate
+pip install sentencepiece
+
+# Development tools
 pip install jupyter jupyterlab
+pip install pytest ipytest radon
+
+# Classical ML
 pip install scikit-learn pandas numpy matplotlib seaborn
 pip install xgboost lightgbm
+
+# Audio processing
+pip install librosa
 ```
 
 ### Running Notebooks
@@ -155,8 +250,13 @@ jupyter notebook
 - **Tokenization**: Subword tokenization (WordPiece, BPE), special tokens
 - **Attention Mechanisms**: Self-attention, multi-head attention, positional encodings
 - **BERT Architecture**: Bidirectional context, [CLS] token for classification
-- **Fine-tuning**: Task-specific heads, learning rate strategies, catastrophic forgetting
-- **HuggingFace Ecosystem**: `transformers`, `datasets`, `Trainer` API
+- **GPT-2 & Causal LM**: Autoregressive generation, top-k/top-p sampling
+- **LLAMA & Mistral**: Modern open-source LLMs, instruction tuning
+- **Fine-tuning**: Task-specific heads, LoRA, QLoRA, learning rate strategies
+- **RAG Systems**: Document retrieval, embedding-based search, context injection
+- **Quantization**: 4-bit/8-bit quantization for memory efficiency
+- **Code Generation**: LLM-based code synthesis, automated testing, quality metrics
+- **HuggingFace Ecosystem**: `transformers`, `datasets`, `Trainer` API, `PEFT`, `bitsandbytes`
 
 ## 📊 Datasets Used
 
@@ -170,7 +270,9 @@ jupyter notebook
 - **Languages**: Python
 - **DL Framework**: PyTorch
 - **ML Libraries**: scikit-learn, XGBoost, LightGBM
-- **NLP**: HuggingFace Transformers, tokenizers
+- **NLP/LLMs**: HuggingFace Transformers, tokenizers, PEFT, bitsandbytes
+- **Code Quality**: pytest, ipytest, Radon (complexity analysis)
+- **Audio/Vision**: librosa, torchvision, timm
 - **Visualization**: Matplotlib, Seaborn
 - **Data**: Pandas, NumPy
 - **Notebook**: Jupyter Lab/Notebook
@@ -182,9 +284,14 @@ jupyter notebook
 - ✅ Transfer learning for computer vision
 - ✅ Attention mechanisms and T5 architecture
 - ✅ BERT fine-tuning and text classification
-- 🔄 Advanced NLP techniques (ongoing)
-- 🔜 GPT-style models and generation
-- 🔜 Model optimization and deployment
+- ✅ GPT-2 and causal language modeling
+- ✅ LLAMA and Mistral model deployment
+- ✅ Quantization and LoRA for efficient fine-tuning
+- ✅ RAG (Retrieval-Augmented Generation) systems
+- ✅ Agentic code generation with LLMs
+- ✅ Advanced vision architectures
+- ✅ Audio processing and keyword spotting
+- ✅ GANs for generative tasks
 
 ## 📝 Best Practices
 
@@ -205,4 +312,4 @@ This is a personal learning repository, but suggestions and discussions are welc
 
 ---
 
-*Last updated: October 2025*
+*Last updated: December 2025*
